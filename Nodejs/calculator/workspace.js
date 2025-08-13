@@ -18,18 +18,22 @@ let worker=(req,res)=>{
         req.on('data',(chunk)=>{
             data.push(chunk);
         })
+        let obj;
         req.on('end',()=>{
             let parsedata=Buffer.concat(data).toString();
             let parser=new URLSearchParams(parsedata);
-            let obj={};
+            obj={};
             // Object.fromEntries(parsedata);
             for(const [key,value] of parser.entries()){
                 obj[key]=value;
             }
-            res.setHeader('Content-Type','text/html')
-            res.write(add(obj));
-            res.end();
+            // res.setHeader('Content-Type','text/html')
+            // res.write(add(obj));
+            return res.end();
         })
+         res.setHeader('Content-Type','text/html')
+            res.write(add(obj));
+            // async this will be undefined because callback waits in event queue ie. req.on and req.in(end)
 
     }
 }

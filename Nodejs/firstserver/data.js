@@ -8,7 +8,7 @@ const worker= ()=>(req,res)=>{
         return res.end();    
     }
     else if(req.url==="/next" && req.method==="POST"){
-        // fs.writeFileSync('user.txt','harshas text');
+        // fs.writeFileSync('user.txt','harshas text'); --> blobking code froces event loop to do this which blocks callback use writeFile
         res.statusCode=302;
         res.setHeader('Location','/login')
         // res.end()
