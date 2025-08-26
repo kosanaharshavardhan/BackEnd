@@ -2,9 +2,10 @@ const express=require('express')
 const app=express()
 const router=require('./routes/useroot')
 
-app.use(router)
+app.use("/coomon",router)
+
 app.use((req,res,next)=>{
-    res.send("<h1>404 Not found</h1>")
+    res.status(404).send("<h1>404 Not found</h1>")
 })
 // app.use((req,res,next)=>{
 //     console.log(req.url,req.method);

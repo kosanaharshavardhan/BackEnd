@@ -6,6 +6,7 @@ router.use((req,res,next)=>{
     console.log(req.url,req.method);
     next()
 })
+
 router.use(express.urlencoded());
 
 router.get('/',(req,res,next)=>{
@@ -34,4 +35,5 @@ router.post('/add-home',(req,res,next)=>{
         <a href='/'>Go to Home</a>
         `)
 })
+
 module.exports=router;
