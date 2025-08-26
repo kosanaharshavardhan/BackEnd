@@ -1,6 +1,7 @@
 const express=require('express')
 const router=express.Router()
 const path=require('path');
+const rootpath=require('../utility/pathutil')
 
 router.use((req,res,next)=>{
     console.log(req.url,req.method);
@@ -16,7 +17,7 @@ router.get('/',(req,res,next)=>{
     //     <a href="/add-home">Add Home</a>
     //     `
     //     )
-    res.sendFile(path.join(__dirname,"../","views","home.html"))
+    res.sendFile(path.join(rootpath,"views","home.html"))
 })
 router.get('/add-home',(req,res,next)=>{
     // res.send(
