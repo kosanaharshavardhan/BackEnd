@@ -4,6 +4,8 @@
   "description": "airbnb practise project",
   "main": "main.js",
   "scripts": {
+    "tailwind":"tailwindcss -i ./views/input.css -o ./public/output.css --watch",
+    "start":"node main.js & npm run tailwind",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
