@@ -10,7 +10,7 @@ hostroute.get("/add-home",(req,res)=>{
 //  res.sendFile(path.join(__dirname,"../","views","addhome.html"))
  res.sendFile(path.join(rootdir,"views","addhome.html"));
 })
-
+const addedhouses=[];
 hostroute.post("/add-home",(req,res)=>{
      // res.send(
 
@@ -21,8 +21,10 @@ hostroute.post("/add-home",(req,res)=>{
     //     </form>
     //     `
     // )
-    console.log(req.body);
+    // console.log(req.body);
     res.sendFile(path.join(rootdir,"views","homeadded.html"));
+    addedhouses.push(req.body);
+    console.log(addedhouses);
 })
 
 module.exports=hostroute;
