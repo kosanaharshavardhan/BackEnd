@@ -12,6 +12,14 @@
     <header>
       <h1 class="text-red-700 text-5xl" >Welcome to airbnb</h1>
     </header>
+    <section>
+      <h1>Here are the registered HOmes</h1>
+      <ul>
+          <% registeredhome.forEach((ele)=>{%>
+            <li><%=ele.houseName%></li>
+          <%})%>
+      </ul>
+    </section>
     <main>
       <a href="/host/add-home">Add Home</a>
     </main>

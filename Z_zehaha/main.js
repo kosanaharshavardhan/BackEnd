@@ -4,7 +4,7 @@ const express=require('express');
 const app=express();
 
 const rootdir=require('./utils/pathutil');
-const hostroute=require('./routes/hostroute');
+const {hostroute}=require('./routes/hostroute');
 const useroute=require('./routes/userroute');
 app.set("view engine","ejs");
 app.set("views","views");

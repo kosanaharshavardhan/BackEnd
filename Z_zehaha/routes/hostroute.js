@@ -23,8 +23,12 @@ hostroute.post("/add-home",(req,res)=>{
     // )
     // console.log(req.body);
     res.sendFile(path.join(rootdir,"views","homeadded.html"));
-    addedhouses.push(req.body);
+    addedhouses.push(req.body); 
     console.log(addedhouses);
 })
-
-module.exports=hostroute;
+// module.exports=addedhouses;
+// module.exports=hostroute;
+module.exports={
+addedhouses:addedhouses,
+hostroute:hostroute
+};
