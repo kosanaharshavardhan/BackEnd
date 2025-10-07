@@ -7,7 +7,7 @@ const rootdir=require('../utils/pathutil');
 
 
 hostroute.get("/add-home",homes.getAddNewHome)
-const addedhouses=[];
+// const addedhouses=[];
 hostroute.post("/add-home",homes.com);
 // hostroute.post("/add-home",(req,res)=>{
 //      // res.send(
@@ -27,6 +27,6 @@ hostroute.post("/add-home",homes.com);
 // module.exports=addedhouses;
 // module.exports=hostroute;
 module.exports={
-addedhouses:addedhouses,
+// addedhouses:addedhouses,
 hostroute:hostroute
 };

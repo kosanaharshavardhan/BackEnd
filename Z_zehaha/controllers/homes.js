@@ -1,6 +1,6 @@
 const path=require('path');
 const rootdir=require('../utils/pathutil');
-
+const {home}=require('../models/home');
 exports.getAddNewHome=(req,res)=>{
 //  res.sendFile(path.join(__dirname,"../","views","addhome.html"))
  res.sendFile(path.join(rootdir,"views","addhome.html"));
@@ -12,7 +12,7 @@ exports.$404controller=(req,res,next)=>{
     let housename="WELL WELL WELL";
     res.status(404).render('404',{housename,title:'Page Not Found12309232310u3'});
 }
-const addedhouses=[];
+// const addedhouses=[];
 exports.com=(req,res)=>{
      // res.send(
 
@@ -25,6 +25,19 @@ exports.com=(req,res)=>{
     // )
     // console.log(req.body);
     res.sendFile(path.join(rootdir,"views","homeadded.html"));
-    addedhouses.push(req.body); 
-    console.log(addedhouses);
+    const obj=new home(req.body.houseName)
+    console.log(req.body)
+    console.log(req.body.houseName);
+    obj.save();
+    
+
+    // addedhouses.push(req.body); 
+    // console.log(addedhouses);
+}
+
+exports.com2=(req,res)=>{
+    // res.sendFile(path.join(rootdir,"views","home.html"));
+    const addedhouses=home.fetch();
+    console.log(addedhouses)
+    res.render("home",{registeredhome:addedhouses});
 }
