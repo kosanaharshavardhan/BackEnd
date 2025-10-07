@@ -1,4 +1,5 @@
 const path=require('path');
+
 const rootdir=require('../utils/pathutil');
 const {home}=require('../models/home');
 exports.getAddNewHome=(req,res)=>{
@@ -37,7 +38,11 @@ exports.com=(req,res)=>{
 
 exports.com2=(req,res)=>{
     // res.sendFile(path.join(rootdir,"views","home.html"));
-    const addedhouses=home.fetch();
-    console.log(addedhouses)
-    res.render("home",{registeredhome:addedhouses});
+    home.fetch(addedhouses=>{
+        console.log(addedhouses)
+        res.render("home",{registeredhome:addedhouses});
+    });
+    // const addedhouses=home.fetch();
+//     console.log(addedhouses)
+//     res.render("home",{registeredhome:addedhouses});
 }
