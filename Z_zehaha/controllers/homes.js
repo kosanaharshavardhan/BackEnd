@@ -12,3 +12,19 @@ exports.$404controller=(req,res,next)=>{
     let housename="WELL WELL WELL";
     res.status(404).render('404',{housename,title:'Page Not Found12309232310u3'});
 }
+const addedhouses=[];
+exports.com=(req,res)=>{
+     // res.send(
+
+    //     `<h3>Register Here2</h3>
+    //     <form action='/add-home' method='POST'>
+    //     <input type="text" name="house" placeholder="Enter your name">
+    //     <input type="submit" value="Submit"/>
+    //     </form>
+    //     `
+    // )
+    // console.log(req.body);
+    res.sendFile(path.join(rootdir,"views","homeadded.html"));
+    addedhouses.push(req.body); 
+    console.log(addedhouses);
+}
