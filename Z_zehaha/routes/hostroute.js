@@ -1,15 +1,12 @@
 const path=require('path');
-
+const homes=require('../controllers/homes')
 const express=require('express');
 const hostroute=express.Router();
 
 const rootdir=require('../utils/pathutil');
 
 
-hostroute.get("/add-home",(req,res)=>{
-//  res.sendFile(path.join(__dirname,"../","views","addhome.html"))
- res.sendFile(path.join(rootdir,"views","addhome.html"));
-})
+hostroute.get("/add-home",homes.getAddNewHome)
 const addedhouses=[];
 hostroute.post("/add-home",(req,res)=>{
      // res.send(
