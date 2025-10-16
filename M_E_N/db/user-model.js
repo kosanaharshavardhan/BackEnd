@@ -12,8 +12,6 @@ const userscheme=mongoose.Schema({
             // ref:'schemaname of that object whose ids are coming'
             //user.save() for explicit changes
         }
-        
     ]
-
 })
 module.exports=mongoose.model("user",userscheme);
