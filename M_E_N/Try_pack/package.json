@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
+    "figlet": "^1.9.3",
     "give-me-a-joke": "^0.5.1"
   }
 }
